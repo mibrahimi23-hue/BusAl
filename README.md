@@ -21,3 +21,8 @@ Odoo 17, Python, PostgreSQL, XML (views), JavaScript
 
 ## Autori
 Marvi Ibrahimi
+
+## Foto
+![Rezervimi](screenshots/booking.png)
+![Zgjedhja e vendeve](screenshots/seats.png)
+![Fatura](screenshots/invoice.png)
