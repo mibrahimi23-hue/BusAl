@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+  <record id="city_tirane" model="busal.city"><field name="name">Tiranë</field><field name="latitude">41.3275</field><field name="longitude">19.8187</field></record>
+  <record id="city_durres" model="busal.city"><field name="name">Durrës</field><field name="latitude">41.3246</field><field name="longitude">19.4565</field></record>
+  <record id="city_shkoder" model="busal.city"><field name="name">Shkodër</field><field name="latitude">42.0683</field><field name="longitude">19.5126</field></record>
+  <record id="city_vlore" model="busal.city"><field name="name">Vlorë</field><field name="latitude">40.4660</field><field name="longitude">19.4914</field></record>
+  <record id="city_elbasan" model="busal.city"><field name="name">Elbasan</field><field name="latitude">41.1125</field><field name="longitude">20.0822</field></record>
+  <record id="city_korce" model="busal.city"><field name="name">Korçë</field><field name="latitude">40.6186</field><field name="longitude">20.7808</field></record>
+  <record id="city_fier" model="busal.city"><field name="name">Fier</field><field name="latitude">40.7239</field><field name="longitude">19.5561</field></record>
+  <record id="city_berat" model="busal.city"><field name="name">Berat</field><field name="latitude">40.7058</field><field name="longitude">19.9522</field></record>
+  <record id="city_lushnje" model="busal.city"><field name="name">Lushnjë</field><field name="latitude">40.9419</field><field name="longitude">19.7050</field></record>
+  <record id="city_kavaje" model="busal.city"><field name="name">Kavajë</field><field name="latitude">41.1856</field><field name="longitude">19.5569</field></record>
+  <record id="city_gjirokaster" model="busal.city"><field name="name">Gjirokastër</field><field name="latitude">40.0758</field><field name="longitude">20.1389</field></record>
+  <record id="city_sarande" model="busal.city"><field name="name">Sarandë</field><field name="latitude">39.8661</field><field name="longitude">20.0050</field></record>
+  <record id="city_lezhe" model="busal.city"><field name="name">Lezhë</field><field name="latitude">41.7836</field><field name="longitude">19.6436</field></record>
+  <record id="city_kukes" model="busal.city"><field name="name">Kukës</field><field name="latitude">42.0769</field><field name="longitude">20.4219</field></record>
+  <record id="city_pogradec" model="busal.city"><field name="name">Pogradec</field><field name="latitude">40.9025</field><field name="longitude">20.6525</field></record>
+  <record id="city_peshkopi" model="busal.city"><field name="name">Peshkopi</field><field name="latitude">41.6853</field><field name="longitude">20.4289</field></record>
+  <record id="city_kruje" model="busal.city"><field name="name">Krujë</field><field name="latitude">41.5092</field><field name="longitude">19.7928</field></record>
+  <record id="city_lac" model="busal.city"><field name="name">Laç</field><field name="latitude">41.6353</field><field name="longitude">19.7117</field></record>
+  <record id="city_librazhd" model="busal.city"><field name="name">Librazhd</field><field name="latitude">41.1833</field><field name="longitude">20.3167</field></record>
+  <record id="city_permet" model="busal.city"><field name="name">Përmet</field><field name="latitude">40.2336</field><field name="longitude">20.3519</field></record>
+</odoo>

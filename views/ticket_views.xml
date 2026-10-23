@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_ticket_tree" model="ir.ui.view">
+    <field name="name">busal.ticket.tree</field>
+    <field name="model">busal.ticket</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="ticket_number"/>
+        <field name="passenger_name"/>
+        <field name="company_id"/>
+        <field name="origin"/>
+        <field name="destination"/>
+        <field name="departure_time"/>
+        <field name="seat_id"/>
+        <field name="price"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_ticket_form" model="ir.ui.view">
+    <field name="name">busal.ticket.form</field>
+    <field name="model">busal.ticket</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_print" string="Print Ticket / Invoice" type="object" class="btn-primary"/>
+        </header>
+        <sheet>
+          <group>
+            <group>
+              <field name="ticket_number"/>
+              <field name="booking_id"/>
+              <field name="passenger_name"/>
+              <field name="customer_name"/>
+              <field name="customer_email"/>
+            </group>
+            <group>
+              <field name="company_id"/>
+              <field name="bus_id"/>
+              <field name="trip_id"/>
+              <field name="origin"/>
+              <field name="destination"/>
+              <field name="departure_time"/>
+              <field name="arrival_time"/>
+              <field name="seat_id"/>
+              <field name="price"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_ticket" model="ir.actions.act_window">
+    <field name="name">Tickets</field>
+    <field name="res_model">busal.ticket</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

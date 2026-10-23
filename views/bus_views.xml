@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_bus_tree" model="ir.ui.view">
+    <field name="name">busal.bus.tree</field>
+    <field name="model">busal.bus</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="plate_number"/>
+        <field name="company_id"/>
+        <field name="model"/>
+        <field name="capacity"/>
+        <field name="bus_type"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_bus_form" model="ir.ui.view">
+    <field name="name">busal.bus.form</field>
+    <field name="model">busal.bus</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_generate_seats" string="Generate Seats" type="object"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="company_id"/>
+            <field name="plate_number"/>
+            <field name="model"/>
+            <field name="bus_type"/>
+            <field name="rows"/>
+            <field name="cols"/>
+            <field name="capacity"/>
+            <field name="is_active"/>
+          </group>
+          <notebook>
+            <page string="Seats">
+              <field name="seat_ids" readonly="1">
+                <tree>
+                  <field name="seat_number"/>
+                  <field name="seat_type"/>
+                  <field name="price"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_bus" model="ir.actions.act_window">
+    <field name="name">Buses</field>
+    <field name="res_model">busal.bus</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

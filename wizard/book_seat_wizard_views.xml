@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_book_seat_wizard" model="ir.ui.view">
+    <field name="name">busal.book.seat.wizard.form</field>
+    <field name="model">busal.book.seat.wizard</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <field name="booking_id" readonly="1"/>
+          <field name="total_amount"/>
+          <field name="payment_method"/>
+          <field name="card_number" invisible="payment_method != 'card'" placeholder="16 shifra"/>
+        </group>
+        <footer>
+          <button name="action_pay" string="Pay" type="object" class="btn-primary"/>
+          <button string="Close" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>

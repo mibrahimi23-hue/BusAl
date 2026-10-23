@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="menu_busal_root" name="Bus AL"/>
+
+  <menuitem id="menu_new_booking" name="New Booking" parent="menu_busal_root" action="action_booking_new" sequence="10"/>
+  <menuitem id="menu_booking" name="Bookings" parent="menu_busal_root" action="action_booking" sequence="20"/>
+  <menuitem id="menu_customer" name="Passengers" parent="menu_busal_root" action="action_customer" sequence="30"/>
+
+  <menuitem id="menu_reports" name="Reports" parent="menu_busal_root" sequence="40"
+            groups="busal.group_busal_manager"/>
+  <menuitem id="menu_payment" name="Payments" parent="menu_reports" action="action_payment" sequence="10"/>
+  <menuitem id="menu_trip" name="Departures" parent="menu_reports" action="action_trip" sequence="20"/>
+
+  <menuitem id="menu_config" name="Configuration" parent="menu_busal_root" sequence="90"
+            groups="busal.group_busal_manager"/>
+  <menuitem id="menu_schedule" name="Schedules" parent="menu_config" action="action_schedule" sequence="10"/>
+  <menuitem id="menu_bus" name="Buses" parent="menu_config" action="action_bus" sequence="20"/>
+  <menuitem id="menu_route" name="Routes &amp; Prices" parent="menu_config" action="action_route" sequence="30"/>
+  <menuitem id="menu_city" name="Cities" parent="menu_config" action="action_city" sequence="40"/>
+  <menuitem id="menu_company" name="Companies" parent="menu_config" action="action_company" sequence="50"/>
+</odoo>

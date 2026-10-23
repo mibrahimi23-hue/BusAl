@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_route_tree" model="ir.ui.view">
+    <field name="name">busal.route.tree</field>
+    <field name="model">busal.route</field>
+    <field name="arch" type="xml">
+      <tree>
+        <header>
+          <button name="action_generate_routes" string="Generate Routes" type="object" display="always"/>
+        </header>
+        <field name="origin_city_id"/>
+        <field name="destination_city_id"/>
+        <field name="distance_km"/>
+        <field name="duration_min"/>
+        <field name="price_per_km"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_route_form" model="ir.ui.view">
+    <field name="name">busal.route.form</field>
+    <field name="model">busal.route</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="origin_city_id"/>
+            <field name="destination_city_id"/>
+            <field name="distance_km"/>
+            <field name="avg_speed"/>
+            <field name="duration_min"/>
+            <field name="price_per_km"/>
+            <field name="is_active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_route" model="ir.actions.act_window">
+    <field name="name">Routes</field>
+    <field name="res_model">busal.route</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="action_report_ticket" model="ir.actions.report">
+    <field name="name">Ticket / Invoice</field>
+    <field name="model">busal.ticket</field>
+    <field name="report_type">qweb-html</field>
+    <field name="report_name">busal.report_ticket_document</field>
+    <field name="report_file">busal.report_ticket_document</field>
+    <field name="binding_model_id" ref="model_busal_ticket"/>
+    <field name="binding_type">report</field>
+  </record>
+
+  <template id="report_ticket_document">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="o">
+        <t t-call="web.basic_layout">
+          <t t-set="pay" t-value="o.booking_id.payment_ids[:1]"/>
+          <div class="page" style="font-size:14px;max-width:700px;margin:20px auto;">
+            <button onclick="window.print()" class="btn btn-primary d-print-none">Print</button>
+            <h2>BUS AL - Ticket &amp; Invoice</h2>
+            <hr/>
+            <table class="table table-bordered">
+              <tr><td>Ticket No.</td><td><b t-esc="o.ticket_number"/></td></tr>
+              <tr><td>Booking</td><td t-esc="o.booking_id.booking_code"/></tr>
+              <tr><td>Passenger</td><td t-esc="o.passenger_name"/></tr>
+              <tr><td>Customer</td><td t-esc="o.booking_id.customer_name"/></tr>
+              <tr><td>Email</td><td t-esc="o.booking_id.email"/></tr>
+              <tr><td>Company</td><td t-esc="o.company_id.name"/></tr>
+              <tr><td>Bus</td><td t-esc="o.bus_id.plate_number"/></tr>
+              <tr><td>From</td><td t-esc="o.origin"/></tr>
+              <tr><td>To</td><td t-esc="o.destination"/></tr>
+              <tr><td>Departure</td><td t-field="o.departure_time"/></tr>
+              <tr><td>Arrival</td><td t-field="o.arrival_time"/></tr>
+              <tr><td>Seat</td><td><b t-esc="o.seat_id.seat_number"/></td></tr>
+              <tr><td>Price per seat</td><td t-esc="'%.2f EUR' % o.trip_id.base_price"/></tr>
+              <tr><td>Seat supplement</td><td t-esc="'%.2f EUR' % o.seat_id.price"/></tr>
+              <tr><td><b>Ticket price</b></td><td><b t-esc="'%.2f EUR' % o.price"/></td></tr>
+              <tr><td>Payment method</td>
+                <td>
+                  <span t-esc="pay.payment_method"/>
+                  <span t-if="o.booking_id.card_last4"> **** <t t-esc="o.booking_id.card_last4"/></span>
+                </td>
+              </tr>
+              <tr><td>Paid at</td><td t-field="pay.paid_at"/></tr>
+              <tr><td>Status</td><td t-esc="o.booking_id.status"/></tr>
+            </table>
+            <h4>Total booking: <t t-esc="'%.2f EUR' % o.booking_id.total_amount"/></h4>
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+</odoo>

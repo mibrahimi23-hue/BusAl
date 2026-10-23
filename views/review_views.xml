@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_review_tree" model="ir.ui.view">
+    <field name="name">Bus AL - Review List</field>
+    <field name="model">busal.review</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="user_id"/>
+        <field name="trip_id"/>
+        <field name="rating"/>
+        <field name="created_at"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_review_form" model="ir.ui.view">
+    <field name="name">Bus AL - Review Form</field>
+    <field name="model">busal.review</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="user_id"/>
+            <field name="trip_id"/>
+            <field name="rating"/>
+            <field name="comment"/>
+            <field name="created_at"/>
+            <field name="updated_at"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_review_search" model="ir.ui.view">
+    <field name="name">Bus AL - Review Search</field>
+    <field name="model">busal.review</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="user_id"/>
+        <field name="trip_id"/>
+        <field name="rating"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_review" model="ir.actions.act_window">
+    <field name="name">Reviews</field>
+    <field name="res_model">busal.review</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Nuk ka review të krijuar.</p>
+    </field>
+  </record>
+</odoo>

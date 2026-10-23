@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_booking_tree" model="ir.ui.view">
+    <field name="name">busal.booking.tree</field>
+    <field name="model">busal.booking</field>
+    <field name="arch" type="xml">
+      <tree decoration-success="status == 'paid'" decoration-muted="status == 'cancelled'">
+        <field name="booking_code"/>
+        <field name="customer_name" string="Passenger"/>
+        <field name="route_id"/>
+        <field name="trip_date"/>
+        <field name="passenger_count"/>
+        <field name="total_amount" sum="Total"/>
+        <field name="status"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_booking_form" model="ir.ui.view">
+    <field name="name">busal.booking.form</field>
+    <field name="model">busal.booking</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_print" string="Print Tickets / Invoice" type="object" class="btn-primary"
+                  invisible="status != 'paid'"/>
+          <button name="action_cancel" string="Cancel Booking" type="object"
+                  invisible="status != 'paid'" groups="busal.group_busal_manager"/>
+          <field name="status" widget="statusbar" statusbar_visible="pending,paid"/>
+        </header>
+        <sheet>
+          <field name="seat_data" invisible="1"/>
+          <group>
+            <group string="Trip">
+              <field name="booking_code" readonly="1"/>
+              <field name="from_city_id" options="{'no_create': True}" readonly="status != 'pending'"/>
+              <field name="to_city_id" options="{'no_create': True}" readonly="status != 'pending'"/>
+              <field name="trip_date" readonly="status != 'pending'"/>
+              <field name="schedule_id" options="{'no_create': True}"
+                     domain="[('from_city_id', '=', from_city_id), ('to_city_id', '=', to_city_id)]"
+                     readonly="status != 'pending'"/>
+              <field name="passenger_count" readonly="status != 'pending'"/>
+            </group>
+            <group string="Departure" invisible="not schedule_id">
+              <field name="route_card" nolabel="1" colspan="2"/>
+              <field name="base_price"/>
+            </group>
+          </group>
+          <div invisible="not schedule_id">
+            <separator string="Zgjidh vendet (kliko mbi vend)"/>
+            <field name="selected_seats" widget="busal_seat_map" nolabel="1" readonly="status != 'pending'"/>
+          </div>
+          <group>
+            <group string="Travelers">
+              <field name="passenger_names" placeholder="Një emër pasagjeri për rresht" readonly="status != 'pending'"/>
+            </group>
+            <group string="Passenger">
+              <field name="customer_id" string="Passenger" options="{'no_quick_create': True}" readonly="status != 'pending'"/>
+              <field name="email"/>
+              <field name="card_last4" invisible="not card_last4"/>
+              <field name="total_amount"/>
+            </group>
+          </group>
+          <div class="text-end" invisible="status != 'pending'">
+            <button name="action_confirm" string="Confirm and Pay" type="object" class="btn-primary"/>
+          </div>
+          <notebook>
+            <page string="Tickets">
+              <field name="ticket_ids" readonly="1">
+                <tree>
+                  <field name="ticket_number"/>
+                  <field name="passenger_name"/>
+                  <field name="seat_id"/>
+                  <field name="price"/>
+                </tree>
+              </field>
+            </page>
+            <page string="Payments">
+              <field name="payment_ids" readonly="1">
+                <tree>
+                  <field name="payment_method"/>
+                  <field name="amount"/>
+                  <field name="status"/>
+                  <field name="paid_at"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_booking_search" model="ir.ui.view">
+    <field name="name">busal.booking.search</field>
+    <field name="model">busal.booking</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="booking_code"/>
+        <field name="customer_name" string="Passenger"/>
+        <field name="route_id"/>
+        <filter name="paid" string="Paid" domain="[('status', '=', 'paid')]"/>
+        <filter name="pending" string="Pending" domain="[('status', '=', 'pending')]"/>
+        <filter name="cancelled" string="Cancelled" domain="[('status', '=', 'cancelled')]"/>
+        <separator/>
+        <filter name="travel_today" string="Travel today"
+                domain="[('trip_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+        <filter name="travel_date" string="Travel date" date="trip_date" default_period="this_month"/>
+        <group expand="0" string="Group By">
+          <filter name="g_date" string="Travel day" context="{'group_by': 'trip_date:day'}"/>
+          <filter name="g_month" string="Travel month" context="{'group_by': 'trip_date:month'}"/>
+          <filter name="g_route" string="Route" context="{'group_by': 'route_id'}"/>
+          <filter name="g_status" string="Status" context="{'group_by': 'status'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_booking_new" model="ir.actions.act_window">
+    <field name="name">New Booking</field>
+    <field name="res_model">busal.booking</field>
+    <field name="view_mode">form</field>
+  </record>
+
+  <record id="action_booking" model="ir.actions.act_window">
+    <field name="name">Bookings</field>
+    <field name="res_model">busal.booking</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

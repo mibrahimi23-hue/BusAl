@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_seat_availability_tree" model="ir.ui.view">
+    <field name="name">Bus AL - Seat Availability List</field>
+    <field name="model">busal.seat_availability</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="seat_id"/>
+        <field name="trip_id"/>
+        <field name="status"/>
+        <field name="created_at"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_seat_availability_form" model="ir.ui.view">
+    <field name="name">Bus AL - Seat Availability Form</field>
+    <field name="model">busal.seat_availability</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="seat_id"/>
+            <field name="trip_id"/>
+            <field name="status"/>
+            <field name="created_at"/>
+            <field name="updated_at"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_seat_availability_search" model="ir.ui.view">
+    <field name="name">Bus AL - Seat Availability Search</field>
+    <field name="model">busal.seat_availability</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="seat_id"/>
+        <field name="trip_id"/>
+        <field name="status"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_seat_availability" model="ir.actions.act_window">
+    <field name="name">Seat Availability</field>
+    <field name="res_model">busal.seat_availability</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Nuk ka disponibilitet ulësesh.</p>
+    </field>
+  </record>
+</odoo>

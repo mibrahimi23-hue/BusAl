@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_trip_tree" model="ir.ui.view">
+    <field name="name">busal.trip.tree</field>
+    <field name="model">busal.trip</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="origin"/>
+        <field name="destination"/>
+        <field name="company_id"/>
+        <field name="bus_id"/>
+        <field name="trip_date"/>
+        <field name="arrival_time"/>
+        <field name="departure_time"/>
+        <field name="base_price"/>
+        <field name="available_seats"/>
+        <field name="status"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_trip_form" model="ir.ui.view">
+    <field name="name">busal.trip.form</field>
+    <field name="model">busal.trip</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="action_book_seat" string="Book Seat" type="object" class="btn-primary"
+                  invisible="status != 'scheduled' or not id"/>
+          <button name="action_start" string="Start" type="object" invisible="status != 'scheduled'"/>
+          <button name="action_complete" string="Complete" type="object" invisible="status != 'ongoing'"/>
+          <button name="action_cancel" string="Cancel" type="object" invisible="status in ('completed','cancelled')"/>
+          <field name="status" widget="statusbar"/>
+        </header>
+        <sheet>
+          <field name="allowed_company_ids" invisible="1"/>
+          <field name="allowed_bus_ids" invisible="1"/>
+          <group>
+            <group>
+              <field name="from_city_id"/>
+              <field name="to_city_id"/>
+              <field name="company_id" domain="[('id', 'in', allowed_company_ids)]"/>
+              <field name="bus_id" domain="[('id', 'in', allowed_bus_ids)]"/>
+              <field name="schedule_id" domain="[('bus_id', '=', bus_id), ('from_city_id', '=', from_city_id), ('to_city_id', '=', to_city_id)]"/>
+              <field name="trip_date"/>
+            </group>
+            <group>
+              <field name="arrival_time"/>
+              <field name="departure_time"/>
+              <field name="base_price"/>
+              <field name="available_seats"/>
+            </group>
+          </group>
+          <notebook>
+            <page string="Seat Map">
+              <field name="seat_map" nolabel="1"/>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_trip" model="ir.actions.act_window">
+    <field name="name">Trips</field>
+    <field name="res_model">busal.trip</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

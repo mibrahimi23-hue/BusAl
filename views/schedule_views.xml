@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_schedule_tree" model="ir.ui.view">
+    <field name="name">busal.schedule.tree</field>
+    <field name="model">busal.schedule</field>
+    <field name="arch" type="xml">
+      <tree>
+        <header>
+          <button name="action_generate_schedules" string="Generate Schedules (min 4/day per route)" type="object" display="always"/>
+        </header>
+        <field name="company_id"/>
+        <field name="bus_id"/>
+        <field name="from_city_id"/>
+        <field name="to_city_id"/>
+        <field name="departure_hour" widget="float_time"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_schedule_form" model="ir.ui.view">
+    <field name="name">busal.schedule.form</field>
+    <field name="model">busal.schedule</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="bus_id"/>
+            <field name="from_city_id"/>
+            <field name="to_city_id"/>
+            <field name="departure_hour" widget="float_time"/>
+            <field name="active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_schedule" model="ir.actions.act_window">
+    <field name="name">Schedules</field>
+    <field name="res_model">busal.schedule</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

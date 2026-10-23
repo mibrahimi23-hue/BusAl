@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_company_tree" model="ir.ui.view">
+    <field name="name">Bus AL - Company List</field>
+    <field name="model">busal.company</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="phone"/>
+        <field name="email"/>
+        <field name="address"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_company_form" model="ir.ui.view">
+    <field name="name">Bus AL - Company Form</field>
+    <field name="model">busal.company</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="phone"/>
+            <field name="email"/>
+            <field name="address"/>
+            <field name="logo_url"/>
+            <field name="created_at"/>
+            <field name="updated_at"/>
+          </group>
+          <separator string="Related"/>
+          <field name="bus_ids"/>
+          <field name="trip_ids"/>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_company_search" model="ir.ui.view">
+    <field name="name">Bus AL - Company Search</field>
+    <field name="model">busal.company</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="email"/>
+        <field name="phone"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_company" model="ir.actions.act_window">
+    <field name="name">Companies</field>
+    <field name="res_model">busal.company</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Nuk ka kompani të krijuar.</p>
+    </field>
+  </record>
+</odoo>

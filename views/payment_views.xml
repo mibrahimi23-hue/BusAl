@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_payment_tree" model="ir.ui.view">
+    <field name="name">busal.payment.tree</field>
+    <field name="model">busal.payment</field>
+    <field name="arch" type="xml">
+      <tree create="0">
+        <field name="paid_at"/>
+        <field name="booking_id"/>
+        <field name="customer_name"/>
+        <field name="company_id"/>
+        <field name="route_id"/>
+        <field name="passengers"/>
+        <field name="payment_method"/>
+        <field name="amount" sum="Total"/>
+        <field name="status"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_payment_form" model="ir.ui.view">
+    <field name="name">busal.payment.form</field>
+    <field name="model">busal.payment</field>
+    <field name="arch" type="xml">
+      <form create="0">
+        <sheet>
+          <group>
+            <group>
+              <field name="booking_id"/>
+              <field name="customer_name"/>
+              <field name="company_id"/>
+              <field name="route_id"/>
+            </group>
+            <group>
+              <field name="paid_at"/>
+              <field name="passengers"/>
+              <field name="payment_method"/>
+              <field name="amount"/>
+              <field name="status"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_payment_search" model="ir.ui.view">
+    <field name="name">busal.payment.search</field>
+    <field name="model">busal.payment</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="booking_id"/>
+        <field name="customer_name"/>
+        <field name="company_id"/>
+        <field name="route_id"/>
+        <filter name="completed" string="Paid"
+                domain="[('status','=','completed'),('booking_id.status','=','paid')]"/>
+        <separator/>
+        <filter name="paid_date" string="Paid date" date="paid_at" default_period="this_month"/>
+        <group expand="0" string="Group By">
+          <filter name="g_day" string="Day" context="{'group_by':'paid_at:day'}"/>
+          <filter name="g_month" string="Month" context="{'group_by':'paid_at:month'}"/>
+          <filter name="g_year" string="Year" context="{'group_by':'paid_at:year'}"/>
+          <filter name="g_company" string="Company" context="{'group_by':'company_id'}"/>
+          <filter name="g_route" string="Route" context="{'group_by':'route_id'}"/>
+          <filter name="g_method" string="Method" context="{'group_by':'payment_method'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_payment" model="ir.actions.act_window">
+    <field name="name">Payments</field>
+    <field name="res_model">busal.payment</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'search_default_completed': 1, 'search_default_paid_date': 1}</field>
+  </record>
+
+</odoo>

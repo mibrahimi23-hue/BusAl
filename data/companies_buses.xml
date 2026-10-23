@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+  <record id="company_alba" model="busal.company"><field name="name">Alba Trans</field></record>
+  <record id="company_adriatik" model="busal.company"><field name="name">Adriatik Bus</field></record>
+  <record id="company_express" model="busal.company"><field name="name">Skenderbeg Express</field></record>
+  <record id="company_ardian" model="busal.company"><field name="name">Ardian Travel</field></record>
+  <record id="company_vlora" model="busal.company"><field name="name">Illyria Lines</field></record>
+  <record id="company_korca" model="busal.company"><field name="name">Eagle Express</field></record>
+  <record id="company_shkodra" model="busal.company"><field name="name">Northern Star Bus</field></record>
+  <record id="company_berati" model="busal.company"><field name="name">Mozaik Lines</field></record>
+  <record id="company_lezha" model="busal.company"><field name="name">Rapid Transport</field></record>
+  <record id="company_elbasani" model="busal.company"><field name="name">Central Express</field></record>
+  <record id="company_fieri" model="busal.company"><field name="name">Vega Trans</field></record>
+  <record id="company_saranda" model="busal.company"><field name="name">Blue Coast</field></record>
+
+  <record id="bus_1" model="busal.bus"><field name="plate_number">AA 101 BC</field><field name="company_id" ref="company_alba"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_2" model="busal.bus"><field name="plate_number">AA 102 BC</field><field name="company_id" ref="company_alba"/><field name="model">Setra S515</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_3" model="busal.bus"><field name="plate_number">TR 201 DE</field><field name="company_id" ref="company_adriatik"/><field name="model">Neoplan Tourliner</field><field name="rows">11</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_4" model="busal.bus"><field name="plate_number">DR 301 FG</field><field name="company_id" ref="company_express"/><field name="model">Mercedes Travego</field><field name="rows">14</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_5" model="busal.bus"><field name="plate_number">KO 401 HI</field><field name="company_id" ref="company_korca"/><field name="model">Setra S416</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_6" model="busal.bus"><field name="plate_number">TR 501 JK</field><field name="company_id" ref="company_ardian"/><field name="model">Mercedes Tourismo</field><field name="rows">13</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_7" model="busal.bus"><field name="plate_number">TR 502 JK</field><field name="company_id" ref="company_ardian"/><field name="model">Neoplan Cityliner</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_8" model="busal.bus"><field name="plate_number">VL 601 LM</field><field name="company_id" ref="company_vlora"/><field name="model">Mercedes Travego</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_9" model="busal.bus"><field name="plate_number">SH 701 NO</field><field name="company_id" ref="company_shkodra"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_10" model="busal.bus"><field name="plate_number">SH 702 NO</field><field name="company_id" ref="company_shkodra"/><field name="model">Setra S515</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_11" model="busal.bus"><field name="plate_number">BE 801 PQ</field><field name="company_id" ref="company_berati"/><field name="model">Neoplan Tourliner</field><field name="rows">11</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_12" model="busal.bus"><field name="plate_number">BE 802 PQ</field><field name="company_id" ref="company_berati"/><field name="model">Mercedes Travego</field><field name="rows">13</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_13" model="busal.bus"><field name="plate_number">LE 901 RS</field><field name="company_id" ref="company_lezha"/><field name="model">Setra S416</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_14" model="busal.bus"><field name="plate_number">LE 902 RS</field><field name="company_id" ref="company_lezha"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_15" model="busal.bus"><field name="plate_number">EL 111 TU</field><field name="company_id" ref="company_elbasani"/><field name="model">Neoplan Cityliner</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_16" model="busal.bus"><field name="plate_number">EL 112 TU</field><field name="company_id" ref="company_elbasani"/><field name="model">Setra S515</field><field name="rows">13</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_17" model="busal.bus"><field name="plate_number">FI 211 VW</field><field name="company_id" ref="company_fieri"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_18" model="busal.bus"><field name="plate_number">FI 212 VW</field><field name="company_id" ref="company_fieri"/><field name="model">Mercedes Travego</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_19" model="busal.bus"><field name="plate_number">SA 311 XY</field><field name="company_id" ref="company_saranda"/><field name="model">Setra S416</field><field name="rows">11</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_20" model="busal.bus"><field name="plate_number">SA 312 XY</field><field name="company_id" ref="company_saranda"/><field name="model">Neoplan Tourliner</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_21" model="busal.bus"><field name="plate_number">AA 103 BC</field><field name="company_id" ref="company_alba"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_22" model="busal.bus"><field name="plate_number">TR 202 DE</field><field name="company_id" ref="company_adriatik"/><field name="model">Setra S515</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Premium</field></record>
+  <record id="bus_23" model="busal.bus"><field name="plate_number">DR 302 FG</field><field name="company_id" ref="company_express"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+  <record id="bus_24" model="busal.bus"><field name="plate_number">KO 402 HI</field><field name="company_id" ref="company_korca"/><field name="model">Neoplan Cityliner</field><field name="rows">12</field><field name="cols">4</field><field name="bus_type">Standard</field></record>
+</odoo>

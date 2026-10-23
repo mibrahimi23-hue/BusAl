@@ -1,0 +1,30 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_busal_user_user,busal.user user,model_busal_user,group_busal_user,1,0,0,0
+access_busal_user_manager,busal.user manager,model_busal_user,group_busal_manager,1,1,1,1
+access_busal_customer_user,busal.customer user,model_busal_customer,group_busal_user,1,1,1,0
+access_busal_customer_manager,busal.customer manager,model_busal_customer,group_busal_manager,1,1,1,1
+access_busal_company_user,busal.company user,model_busal_company,group_busal_user,1,0,0,0
+access_busal_company_manager,busal.company manager,model_busal_company,group_busal_manager,1,1,1,1
+access_busal_city_user,busal.city user,model_busal_city,group_busal_user,1,0,0,0
+access_busal_city_manager,busal.city manager,model_busal_city,group_busal_manager,1,1,1,1
+access_busal_route_user,busal.route user,model_busal_route,group_busal_user,1,0,0,0
+access_busal_route_manager,busal.route manager,model_busal_route,group_busal_manager,1,1,1,1
+access_busal_bus_user,busal.bus user,model_busal_bus,group_busal_user,1,0,0,0
+access_busal_bus_manager,busal.bus manager,model_busal_bus,group_busal_manager,1,1,1,1
+access_busal_seat_user,busal.seat user,model_busal_seat,group_busal_user,1,0,0,0
+access_busal_seat_manager,busal.seat manager,model_busal_seat,group_busal_manager,1,1,1,1
+access_busal_trip_user,busal.trip user,model_busal_trip,group_busal_user,1,0,0,0
+access_busal_trip_manager,busal.trip manager,model_busal_trip,group_busal_manager,1,1,1,1
+access_busal_schedule_user,busal.schedule user,model_busal_schedule,group_busal_user,1,0,0,0
+access_busal_schedule_manager,busal.schedule manager,model_busal_schedule,group_busal_manager,1,1,1,1
+access_busal_seat_availability_user,busal.seat_availability user,model_busal_seat_availability,group_busal_user,1,1,1,0
+access_busal_seat_availability_manager,busal.seat_availability manager,model_busal_seat_availability,group_busal_manager,1,1,1,1
+access_busal_booking_user,busal.booking user,model_busal_booking,group_busal_user,1,1,1,0
+access_busal_booking_manager,busal.booking manager,model_busal_booking,group_busal_manager,1,1,1,1
+access_busal_ticket_user,busal.ticket user,model_busal_ticket,group_busal_user,1,1,1,0
+access_busal_ticket_manager,busal.ticket manager,model_busal_ticket,group_busal_manager,1,1,1,1
+access_busal_payment_user,busal.payment user,model_busal_payment,group_busal_user,1,1,1,0
+access_busal_payment_manager,busal.payment manager,model_busal_payment,group_busal_manager,1,1,1,1
+access_busal_review_user,busal.review user,model_busal_review,group_busal_user,1,1,1,0
+access_busal_review_manager,busal.review manager,model_busal_review,group_busal_manager,1,1,1,1
+access_busal_book_seat_wizard,busal.book.seat.wizard,model_busal_book_seat_wizard,group_busal_user,1,1,1,1

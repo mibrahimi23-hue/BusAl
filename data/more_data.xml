@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+  <record id="company_lushnja" model="busal.company"><field name="name">Orion Trans</field></record>
+  <record id="company_kavaja" model="busal.company"><field name="name">Zenith Express</field></record>
+  <record id="company_kruja" model="busal.company"><field name="name">Falcon Lines</field></record>
+  <record id="company_dibra" model="busal.company"><field name="name">Alpine Bus</field></record>
+  <record id="company_permeti" model="busal.company"><field name="name">Olive Travel</field></record>
+  <record id="company_gjirokastra" model="busal.company"><field name="name">Summit Express</field></record>
+
+  <record id="bus_25" model="busal.bus"><field name="plate_number">LU 125 AB</field><field name="company_id" ref="company_lushnja"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_26" model="busal.bus"><field name="plate_number">LU 126 AB</field><field name="company_id" ref="company_lushnja"/><field name="model">Setra S416</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_27" model="busal.bus"><field name="plate_number">KA 227 CD</field><field name="company_id" ref="company_kavaja"/><field name="model">Neoplan Cityliner</field><field name="rows">11</field><field name="cols">4</field></record>
+  <record id="bus_28" model="busal.bus"><field name="plate_number">KA 228 CD</field><field name="company_id" ref="company_kavaja"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_29" model="busal.bus"><field name="plate_number">KR 329 EF</field><field name="company_id" ref="company_kruja"/><field name="model">Setra S515</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_30" model="busal.bus"><field name="plate_number">KR 330 EF</field><field name="company_id" ref="company_kruja"/><field name="model">Mercedes Travego</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_31" model="busal.bus"><field name="plate_number">DI 431 GH</field><field name="company_id" ref="company_dibra"/><field name="model">Neoplan Tourliner</field><field name="rows">13</field><field name="cols">4</field></record>
+  <record id="bus_32" model="busal.bus"><field name="plate_number">DI 432 GH</field><field name="company_id" ref="company_dibra"/><field name="model">Setra S416</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_33" model="busal.bus"><field name="plate_number">PE 533 IJ</field><field name="company_id" ref="company_permeti"/><field name="model">Mercedes Tourismo</field><field name="rows">11</field><field name="cols">4</field></record>
+  <record id="bus_34" model="busal.bus"><field name="plate_number">GJ 634 KL</field><field name="company_id" ref="company_gjirokastra"/><field name="model">Setra S515</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_35" model="busal.bus"><field name="plate_number">GJ 635 KL</field><field name="company_id" ref="company_gjirokastra"/><field name="model">Mercedes Travego</field><field name="rows">13</field><field name="cols">4</field></record>
+  <record id="bus_36" model="busal.bus"><field name="plate_number">AA 136 BC</field><field name="company_id" ref="company_alba"/><field name="model">Neoplan Cityliner</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_37" model="busal.bus"><field name="plate_number">TR 237 DE</field><field name="company_id" ref="company_adriatik"/><field name="model">Mercedes Tourismo</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_38" model="busal.bus"><field name="plate_number">DR 338 FG</field><field name="company_id" ref="company_express"/><field name="model">Setra S416</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_39" model="busal.bus"><field name="plate_number">TR 539 JK</field><field name="company_id" ref="company_ardian"/><field name="model">Mercedes Travego</field><field name="rows">12</field><field name="cols">4</field></record>
+  <record id="bus_40" model="busal.bus"><field name="plate_number">SH 740 NO</field><field name="company_id" ref="company_shkodra"/><field name="model">Neoplan Tourliner</field><field name="rows">12</field><field name="cols">4</field></record>
+
+  <record id="sch_50" model="busal.schedule"><field name="bus_id" ref="bus_25"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_lushnje"/><field name="departure_hour">8.0</field></record>
+  <record id="sch_51" model="busal.schedule"><field name="bus_id" ref="bus_25"/><field name="from_city_id" ref="city_lushnje"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">14.0</field></record>
+  <record id="sch_52" model="busal.schedule"><field name="bus_id" ref="bus_26"/><field name="from_city_id" ref="city_lushnje"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">7.0</field></record>
+  <record id="sch_53" model="busal.schedule"><field name="bus_id" ref="bus_26"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_lushnje"/><field name="departure_hour">16.0</field></record>
+  <record id="sch_54" model="busal.schedule"><field name="bus_id" ref="bus_27"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_kavaje"/><field name="departure_hour">7.5</field></record>
+  <record id="sch_55" model="busal.schedule"><field name="bus_id" ref="bus_27"/><field name="from_city_id" ref="city_kavaje"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">13.5</field></record>
+  <record id="sch_56" model="busal.schedule"><field name="bus_id" ref="bus_28"/><field name="from_city_id" ref="city_kavaje"/><field name="to_city_id" ref="city_durres"/><field name="departure_hour">9.0</field></record>
+  <record id="sch_57" model="busal.schedule"><field name="bus_id" ref="bus_28"/><field name="from_city_id" ref="city_durres"/><field name="to_city_id" ref="city_kavaje"/><field name="departure_hour">15.0</field></record>
+  <record id="sch_58" model="busal.schedule"><field name="bus_id" ref="bus_29"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_kruje"/><field name="departure_hour">8.0</field></record>
+  <record id="sch_59" model="busal.schedule"><field name="bus_id" ref="bus_29"/><field name="from_city_id" ref="city_kruje"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">14.0</field></record>
+  <record id="sch_60" model="busal.schedule"><field name="bus_id" ref="bus_30"/><field name="from_city_id" ref="city_kruje"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">7.0</field></record>
+  <record id="sch_61" model="busal.schedule"><field name="bus_id" ref="bus_30"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_kruje"/><field name="departure_hour">15.5</field></record>
+  <record id="sch_62" model="busal.schedule"><field name="bus_id" ref="bus_31"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_peshkopi"/><field name="departure_hour">6.0</field></record>
+  <record id="sch_63" model="busal.schedule"><field name="bus_id" ref="bus_31"/><field name="from_city_id" ref="city_peshkopi"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">13.0</field></record>
+  <record id="sch_64" model="busal.schedule"><field name="bus_id" ref="bus_32"/><field name="from_city_id" ref="city_peshkopi"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">7.0</field></record>
+  <record id="sch_65" model="busal.schedule"><field name="bus_id" ref="bus_32"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_peshkopi"/><field name="departure_hour">14.0</field></record>
+  <record id="sch_66" model="busal.schedule"><field name="bus_id" ref="bus_33"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_permet"/><field name="departure_hour">7.0</field></record>
+  <record id="sch_67" model="busal.schedule"><field name="bus_id" ref="bus_33"/><field name="from_city_id" ref="city_permet"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">14.5</field></record>
+  <record id="sch_68" model="busal.schedule"><field name="bus_id" ref="bus_34"/><field name="from_city_id" ref="city_permet"/><field name="to_city_id" ref="city_gjirokaster"/><field name="departure_hour">9.0</field></record>
+  <record id="sch_69" model="busal.schedule"><field name="bus_id" ref="bus_34"/><field name="from_city_id" ref="city_gjirokaster"/><field name="to_city_id" ref="city_permet"/><field name="departure_hour">16.0</field></record>
+  <record id="sch_70" model="busal.schedule"><field name="bus_id" ref="bus_35"/><field name="from_city_id" ref="city_gjirokaster"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">7.0</field></record>
+  <record id="sch_71" model="busal.schedule"><field name="bus_id" ref="bus_35"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_gjirokaster"/><field name="departure_hour">13.0</field></record>
+  <record id="sch_72" model="busal.schedule"><field name="bus_id" ref="bus_36"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_librazhd"/><field name="departure_hour">8.0</field></record>
+  <record id="sch_73" model="busal.schedule"><field name="bus_id" ref="bus_36"/><field name="from_city_id" ref="city_librazhd"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">15.0</field></record>
+  <record id="sch_74" model="busal.schedule"><field name="bus_id" ref="bus_37"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_durres"/><field name="departure_hour">9.0</field></record>
+  <record id="sch_75" model="busal.schedule"><field name="bus_id" ref="bus_37"/><field name="from_city_id" ref="city_durres"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">12.0</field></record>
+  <record id="sch_76" model="busal.schedule"><field name="bus_id" ref="bus_38"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_durres"/><field name="departure_hour">8.0</field></record>
+  <record id="sch_77" model="busal.schedule"><field name="bus_id" ref="bus_38"/><field name="from_city_id" ref="city_durres"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">18.0</field></record>
+  <record id="sch_78" model="busal.schedule"><field name="bus_id" ref="bus_39"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_shkoder"/><field name="departure_hour">10.0</field></record>
+  <record id="sch_79" model="busal.schedule"><field name="bus_id" ref="bus_39"/><field name="from_city_id" ref="city_shkoder"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">17.0</field></record>
+  <record id="sch_80" model="busal.schedule"><field name="bus_id" ref="bus_40"/><field name="from_city_id" ref="city_tirane"/><field name="to_city_id" ref="city_shkoder"/><field name="departure_hour">16.0</field></record>
+  <record id="sch_81" model="busal.schedule"><field name="bus_id" ref="bus_40"/><field name="from_city_id" ref="city_shkoder"/><field name="to_city_id" ref="city_tirane"/><field name="departure_hour">9.0</field></record>
+</odoo>
